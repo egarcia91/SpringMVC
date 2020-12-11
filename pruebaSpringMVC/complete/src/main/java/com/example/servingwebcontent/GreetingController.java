@@ -32,11 +32,9 @@ public class GreetingController {
 
 	@PostMapping("/holapost")
 	@ResponseBody
-	public String holaPost(@RequestParam String name) {
+	public String holaPost(@RequestParam String name, @RequestParam String username, @RequestParam String password) {
 
 		return "estas logueado, "+ name +", bienvenido";
-		
-
 	}
 	
 	
