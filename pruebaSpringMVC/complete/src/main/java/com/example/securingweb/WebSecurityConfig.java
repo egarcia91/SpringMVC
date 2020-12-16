@@ -16,8 +16,11 @@ import com.example.securingweb.CallLoginLink;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		try {
 		CallLoginLink a = new CallLoginLink();
 		a.callLoginLinkMethod();
+		}
+		catch(Exception e){}
 		http
 			.authorizeRequests()
 				.antMatchers("/", "/home").permitAll()
