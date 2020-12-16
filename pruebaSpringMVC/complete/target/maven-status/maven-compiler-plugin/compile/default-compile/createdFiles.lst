@@ -1,4 +1,5 @@
 com\example\securingweb\MvcConfig.class
 com\example\securingweb\SecuringWebApplication.class
+com\example\securingweb\CallLoginLink.class
 com\example\securingweb\SpringBootWebInitializer.class
 com\example\securingweb\WebSecurityConfig.class

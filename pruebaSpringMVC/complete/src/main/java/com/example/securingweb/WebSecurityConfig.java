@@ -9,14 +9,15 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import com.example.securingweb.CallLink;
+import com.example.securingweb.CallLoginLink;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		boolean a = new CallLink();
+		CallLoginLink a = new CallLoginLink();
+		a.callLoginLinkMethod();
 		http
 			.authorizeRequests()
 				.antMatchers("/", "/home").permitAll()

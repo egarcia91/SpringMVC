@@ -14,9 +14,11 @@ import java.util.Properties;
 //import org.apache.commons.lang3.StringUtils;
 //import org.json.JSONObject;
 
-public class CallLink {
+public class CallLoginLink {
+	
+	public CallLoginLink() {}
 
-	private boolean CallLink( ) throws SocketTimeoutException, IOException {
+	protected boolean callLoginLinkMethod() throws SocketTimeoutException, IOException {
 
 		URL url;
 		try {
@@ -34,30 +36,28 @@ public class CallLink {
 		conn.setReadTimeout(requestTimeout);
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Content-Type", "application/json");
-		
+
 		conn.setRequestProperty("user", "asdf");
 		conn.setRequestProperty("password", "asdasd");
 		conn.setRequestProperty("IpCliente", "192.168.1.23");
 
-		response.code = conn.getResponseCode();
-
-		InputStream is = isResponseCodeOKForHTTPClient(response.code) ? conn
-				.getInputStream() : conn.getErrorStream();
-
-		String encoding = conn.getContentEncoding();
-
-		if (is != null) {
-			BufferedReader br = new BufferedReader(new InputStreamReader(is,
-					null == encoding ? "UTF-8" : encoding));
-
-			StringBuilder builder = new StringBuilder();
-			String line = null;
-			while ((line = br.readLine()) != null) {
-				builder.append(line);
-			}
-			response.body = builder.toString();
-
-		}
+		// response.code =
+		conn.getResponseCode();
+		/*
+		 * InputStream is = isResponseCodeOKForHTTPClient(response.code) ? conn
+		 * .getInputStream() : conn.getErrorStream();
+		 * 
+		 * String encoding = conn.getContentEncoding();
+		 * 
+		 * if (is != null) { BufferedReader br = new BufferedReader(new
+		 * InputStreamReader(is, null == encoding ? "UTF-8" : encoding));
+		 * 
+		 * StringBuilder builder = new StringBuilder(); String line = null; while ((line
+		 * = br.readLine()) != null) { builder.append(line); } response.body =
+		 * builder.toString();
+		 * 
+		 * }
+		 */
 
 		return true;
 	}
