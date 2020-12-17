@@ -30,6 +30,7 @@ public class CallLoginLink {
 
 		int connectTimeout = 50000;
 		int requestTimeout = 50000;
+		String basicAuth = "Basic d3NfbG9naW5fbGluazpQYXNzdzByZA==";
 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		System.out.println("por el momento pude hacer la conexion");
@@ -37,7 +38,9 @@ public class CallLoginLink {
 		conn.setConnectTimeout(connectTimeout);
 		conn.setReadTimeout(requestTimeout);
 		conn.setRequestMethod("POST");
+		conn.setRequestProperty("Authorization", basicAuth);
 		conn.setRequestProperty("Content-Type", "application/json");
+
 
 		System.out.println("empiezo a pasar parametros por body");
 		conn.setRequestProperty("user", "asdf");
