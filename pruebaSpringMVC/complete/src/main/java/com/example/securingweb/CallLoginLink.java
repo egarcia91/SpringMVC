@@ -22,7 +22,7 @@ public class CallLoginLink {
 
 		URL url;
 		try {
-			url = new URL("https://10.7.232.26:443/ws_login_1_1/ConsultarDatosUsuarioService");
+			url = new URL("https://dws06ct0001.dcc.dbna.net/ws_login_1_1/ConsultarDatosUsuarioService");
 		} catch (MalformedURLException e) {
 			System.out.println("me fui por malformacion de URL");
 			throw new RuntimeException("Error al crear URL", e);
