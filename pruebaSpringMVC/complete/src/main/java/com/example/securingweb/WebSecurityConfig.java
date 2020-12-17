@@ -22,6 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		}
 		catch(Exception e){
 			System.out.println("me fui por excepcion");
+			System.out.println(e);
 		}
 
 		http
