@@ -20,7 +20,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			CallLoginLink a = new CallLoginLink();
 			a.callLoginLinkMethod();
 		}
-		catch(Exception e){}
+		catch(Exception e){
+			System.out.println("me fui por excepcion");
+		}
 
 		http
 			.authorizeRequests()
