@@ -24,6 +24,7 @@ public class CallLoginLink {
 		try {
 			url = new URL("https://10.7.232.26:443/ws_login_1_1/ConsultarDatosUsuarioService");
 		} catch (MalformedURLException e) {
+			System.out.println("me fui por malformacion de URL");
 			throw new RuntimeException("Error al crear URL", e);
 		}
 
@@ -31,18 +32,21 @@ public class CallLoginLink {
 		int requestTimeout = 5000;
 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		System.out.println("por el momento pude hacer la conexion");
 		conn.setDoOutput(true);
 		conn.setConnectTimeout(connectTimeout);
 		conn.setReadTimeout(requestTimeout);
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Content-Type", "application/json");
 
+		System.out.println("empiezo a pasar parametros por body");
 		conn.setRequestProperty("user", "asdf");
 		conn.setRequestProperty("password", "asdasd");
 		conn.setRequestProperty("IpCliente", "192.168.1.23");
 
 		// response.code =
-		conn.getResponseCode();
+		System.out.println("hago el llamado a servidor");
+		System.out.println(conn.getResponseCode());
 		/*
 		 * InputStream is = isResponseCodeOKForHTTPClient(response.code) ? conn
 		 * .getInputStream() : conn.getErrorStream();
