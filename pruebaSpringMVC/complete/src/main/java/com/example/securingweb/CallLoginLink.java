@@ -43,9 +43,9 @@ public class CallLoginLink {
 
 
 		System.out.println("empiezo a pasar parametros por body");
-		conn.setRequestProperty("user", "asdf");
-		conn.setRequestProperty("password", "asdasd");
-		//conn.setRequestProperty("IpCliente", "192.168.1.23");
+		conn.setRequestProperty("Alias", "wslogin3");
+		conn.setRequestProperty("Clave", "Prueba05");
+		conn.setRequestProperty("IpCliente", "");
 
 		// response.code =
 		System.out.println("hago el llamado a servidor");
