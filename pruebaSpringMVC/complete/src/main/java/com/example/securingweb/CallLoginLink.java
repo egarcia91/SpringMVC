@@ -39,13 +39,25 @@ public class CallLoginLink {
 		conn.setReadTimeout(requestTimeout);
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Authorization", basicAuth);
-		conn.setRequestProperty("Content-Type", "application/json");
+		//conn.setRequestProperty("Content-Type", "application/json");
+		conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
+		conn.setRequestProperty("Content-Type", "application/soap+xml;charset=UTF-8");
+		//conn.setRequestProperty("Content-Length", "391");
+		conn.setRequestProperty("Connection", "Keep-Alive");
+
+//			Host: 10.7.232.26:443
+//			User-Agent: Apache-HttpClient/4.5.5 (Java/12.0.1)
 
 
 		System.out.println("empiezo a pasar parametros por body");
-		conn.setRequestProperty("Alias", "wslogin3");
-		conn.setRequestProperty("Clave", "Prueba05");
-		conn.setRequestProperty("IpCliente", "");
+//		conn.setRequestProperty("Alias", "wslogin3");
+//		conn.setRequestProperty("Clave", "Prueba05");
+//		conn.setRequestProperty("IpCliente", "");
+
+		String jsonValue = "{\"Alias\":\"wslogin3\",\"Clave\":\"Prueba05\",\"IpCliente\":\"\"}";
+		OutputStream os = conn.getOutputStream();
+		os.write(jsonValue.getBytes());
+		os.flush();
 
 		// response.code =
 		System.out.println("hago el llamado a servidor");
