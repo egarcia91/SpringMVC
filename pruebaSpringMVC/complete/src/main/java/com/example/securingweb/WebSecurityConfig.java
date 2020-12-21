@@ -16,15 +16,6 @@ import com.example.securingweb.CallLoginLink;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		try {
-			CallLoginLink a = new CallLoginLink();
-			a.callLoginLinkMethod();
-		}
-		catch(Exception e){
-			System.out.println("me fui por excepcion");
-			System.out.println(e);
-		}
-
 		http
 			.authorizeRequests()
 				.antMatchers("/", "/home").permitAll()
@@ -47,6 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.password("asd")
 				.roles("USER")
 				.build();
+
+		try {
+			CallLoginLink a = new CallLoginLink();
+			a.callLoginLinkMethod("wslogin3","Prueba05");
+		}
+		catch(Exception e){
+			System.out.println("me fui por excepcion");
+			System.out.println(e);
+		}
+
 
 		return new InMemoryUserDetailsManager(user);
 	}
