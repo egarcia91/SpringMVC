@@ -40,7 +40,7 @@ public class CallLoginLink {
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Authorization", basicAuth);
 		//conn.setRequestProperty("Content-Type", "application/json");
-		conn.setRequestProperty("Accept-Encoding", "gzip,deflate"); deflate
+		conn.setRequestProperty("Accept-Encoding", "gzip,deflate"); 
 		conn.setRequestProperty("Content-Type", "application/soap+xml;charset=UTF-8");
 		//conn.setRequestProperty("Content-Length", "391");
 		conn.setRequestProperty("Connection", "Keep-Alive");
