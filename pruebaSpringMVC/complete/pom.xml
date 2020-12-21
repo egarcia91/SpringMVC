@@ -65,33 +65,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
-
-			<!-- -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>wsimport-from-jdk</id>
-						<goals>
-							<goal>wsimport</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<wsdlUrls>
-						<wsdlUrl>./consultarDatosUsuario.wsdl</wsdlUrl>
-					</wsdlUrls>
-					<keep>true</keep>
-					<packageName>com.example.securingweb</packageName>
-					<sourceDestDir>src/main/java</sourceDestDir>
-				</configuration>
-			</plugin>
-
-
-			<!-- -->
 		</plugins>
 	</build>
 
