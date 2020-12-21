@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://delegate.hb.link.fu.bna.com.ar/" version="1.0" xmlns:tns="http://delegate.hb.link.fu.bna.com.ar/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="esCliente" type="tns:esCliente"/>
+
+  <xs:element name="esClienteResponse" type="tns:esClienteResponse"/>
+
+  <xs:element name="version" type="tns:version"/>
+
+  <xs:element name="versionResponse" type="tns:versionResponse"/>
+
+  <xs:complexType name="version">
+    <xs:sequence/>
+
+  </xs:complexType>
+
+  <xs:complexType name="versionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="esCliente">
+    <xs:sequence>
+
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="esClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario"/>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoYNombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="claveFechaModificacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="claveVencida" type="xs:boolean"/>
+      <xs:element name="codigoRespuesta" type="xs:int"/>
+
+      <xs:element minOccurs="0" name="cuil" type="xs:long"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="numeroTarjeta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

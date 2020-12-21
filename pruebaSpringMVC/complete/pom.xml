@@ -82,7 +82,7 @@
 				</executions>
 				<configuration>
 					<wsdlUrls>
-						<wsdlUrl>https://dws06ct0001.dcc.dbna.net/ws_login_1_1/ConsultarDatosUsuarioService?wsdl</wsdlUrl>
+						<wsdlUrl>./consultarDatosUsuario.wsdl</wsdlUrl>
 					</wsdlUrls>
 					<keep>true</keep>
 					<packageName>com.example.securingweb</packageName>
