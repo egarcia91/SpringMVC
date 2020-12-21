@@ -54,7 +54,7 @@ public class CallLoginLink {
 //		conn.setRequestProperty("Clave", "Prueba05");
 //		conn.setRequestProperty("IpCliente", "");
 
-		String xmlValue = "<soap:Envelope xmlns:soap=/cghttp://www.w3.org/2003/05/soap-envelope\" xmlns:del=\"http://delegate.hb.link.fu.bna.com.ar/\"><soap:Header/><soap:Body><del:esCliente><arg0>wslogin3</arg0><arg1>Prueba05</arg1></del:esCliente></soap:Body></soap:Envelope>";
+		String xmlValue = "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:del=\"http://delegate.hb.link.fu.bna.com.ar/\"><soap:Header/><soap:Body><del:esCliente><arg0>wslogin3</arg0><arg1>Prueba05</arg1></del:esCliente></soap:Body></soap:Envelope>";
 		//String jsonValue = "{\"Alias\":\"wslogin3\",\"Clave\":\"Prueba05\",\"IpCliente\":\"\"}";
 		OutputStream os = conn.getOutputStream();
 		os.write(xmlValue.getBytes());
