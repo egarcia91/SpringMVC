@@ -1,12 +1,5 @@
-com\example\securingweb\Version.class
-com\example\securingweb\CallLoginLink.class
-com\example\securingweb\VersionResponse.class
-com\example\securingweb\ObjectFactory.class
-com\example\securingweb\EsCliente.class
 com\example\securingweb\MvcConfig.class
-com\example\securingweb\Usuario.class
-com\example\securingweb\package-info.class
 com\example\securingweb\SecuringWebApplication.class
-com\example\securingweb\EsClienteResponse.class
+com\example\securingweb\CallLoginLink.class
 com\example\securingweb\SpringBootWebInitializer.class
 com\example\securingweb\WebSecurityConfig.class
