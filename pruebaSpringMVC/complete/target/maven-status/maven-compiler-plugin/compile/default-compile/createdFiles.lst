@@ -1,3 +1,4 @@
+com\example\securingweb\CustomAuthenticationProvider.class
 com\example\securingweb\MvcConfig.class
 com\example\securingweb\SecuringWebApplication.class
 com\example\securingweb\CallLoginLink.class
