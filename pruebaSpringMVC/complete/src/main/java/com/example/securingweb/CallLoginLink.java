@@ -60,26 +60,33 @@ public class CallLoginLink {
 		os.write(xmlValue.getBytes());
 		os.flush();
 
-		// response.code =
 		System.out.println("hago el llamado a servidor");
 		System.out.println(conn.getResponseCode());
 		System.out.println("aca ya no llega");
-		/*
-		 * InputStream is = isResponseCodeOKForHTTPClient(response.code) ? conn
-		 * .getInputStream() : conn.getErrorStream();
-		 * 
-		 * String encoding = conn.getContentEncoding();
-		 * 
-		 * if (is != null) { BufferedReader br = new BufferedReader(new
-		 * InputStreamReader(is, null == encoding ? "UTF-8" : encoding));
-		 * 
-		 * StringBuilder builder = new StringBuilder(); String line = null; while ((line
-		 * = br.readLine()) != null) { builder.append(line); } response.body =
-		 * builder.toString();
-		 * 
-		 * }
-		 */
+
+		InputStream is = isResponseCodeOKForHTTPClient(conn.getResponseCode()) ? conn
+		.getInputStream() : conn.getErrorStream();
+
+		String encoding = conn.getContentEncoding();
+
+		if (is != null) {
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(is, null == encoding ? "UTF-8" : encoding));
+			StringBuilder builder = new StringBuilder();
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				builder.append(line);
+			}
+
+			System.out.println(builder.toString());
+		}
 
 		return true;
 	}
+
+	private boolean isResponseCodeOKForHTTPClient(int code) {
+		return code >= 200 && code < 400;
+	}
+
+
 }

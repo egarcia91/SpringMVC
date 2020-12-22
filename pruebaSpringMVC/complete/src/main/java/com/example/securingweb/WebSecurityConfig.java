@@ -9,11 +9,22 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import com.example.securingweb.CallLoginLink;
+import com.example.securingweb.CustomAuthenticationProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Configuration
 @EnableWebSecurity
+//@ComponentScan("com.baeldung.security")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	@Autowired
+	private CustomAuthenticationProvider authProvider;
+
+//	@Override
+//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.authenticationProvider(authProvider);
+//	}
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -29,26 +40,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll();
 	}
 
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user =
-			User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("asd")
-				.roles("USER")
-				.build();
+//	@Bean
+//	@Override
+//	public UserDetailsService userDetailsService() {
+//		UserDetails user =
+//			User.withDefaultPasswordEncoder()
+//				.username("user")
+//				.password("asd")
+//				.roles("USER")
+//				.build();
+//
 
-		try {
-			CallLoginLink a = new CallLoginLink();
-			a.callLoginLinkMethod("wslogin3","Prueba05");
-		}
-		catch(Exception e){
-			System.out.println("me fui por excepcion");
-			System.out.println(e);
-		}
+//
+//		return new InMemoryUserDetailsManager(user);
+//	}
 
-
-		return new InMemoryUserDetailsManager(user);
-	}
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http.authorizeRequests().anyRequest().authenticated()
+//			.and().httpBasic();
+//	}
 }
