@@ -49,8 +49,7 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
-			<scope>runtime</scope> <optional>true</optional> </dependency -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -67,16 +66,7 @@
 			</plugin>
 		</plugins>
 	</build>
-<!-- 
-	<http use-expressions="true">
-		<intercept-url pattern="/**" access="isAuthenticated()"/>
-		<http-basic/>
-	</http>
 
-	<authentication-manager>
-		<authentication-provider ref="customAuthenticationProvider"/>
-	</authentication-manager>
--->
 	<packaging>war</packaging>
 
 

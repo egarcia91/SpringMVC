@@ -10,9 +10,9 @@ import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Properties;
-
-//import org.apache.commons.lang3.StringUtils;
-//import org.json.JSONObject;
+import javax.xml.bind.Unmarshaller;
+import Javax.xml.bind.JAXBContext;
+import Java.io.File;
 
 public class CallLoginLink {
 	
@@ -77,6 +77,15 @@ public class CallLoginLink {
 			while ((line = br.readLine()) != null) {
 				builder.append(line);
 			}
+			
+			  File file = new File("respuesta.xml");
+			    JAXBContext jaxbContext = JAXBContext.newInstance(respuestaLogin.class);
+
+			    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+			    
+			    RespuestaLogin respuestaLogin = (RespuestaLogin) jaxbUnmarshaller.unmarshal(file);
+			    System.out.println("va a imprimir la deserializacion de xml");
+			    System.out.println(respuestaLogin);
 
 			System.out.println(builder.toString());
 		}
