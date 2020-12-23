@@ -12,7 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>serving-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>serving-web-content</name>
+	<name>serving-web-c"complete/pom.xml"ontent</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -49,13 +49,6 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
