@@ -9,6 +9,14 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 public class CallLoginLink {
 
@@ -63,6 +71,14 @@ public class CallLoginLink {
 		InputStream is = isResponseCodeOKForHTTPClient(conn.getResponseCode()) ? conn
 		.getInputStream() : conn.getErrorStream();
 
+		try {
+			SAXParserFactory factory = SAXParserFactory.newInstance();
+			SAXParser saxParser = factory.newSAXParser();
+			ResponseLoginHandler responseLoginHandler = new ResponseLoginHandler();
+			saxParser.parse(is, responseLoginHandler);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		String encoding = conn.getContentEncoding();
 
 		if (is != null) {
