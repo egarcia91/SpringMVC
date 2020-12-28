@@ -1,8 +1,0 @@
-com\example\securingweb\ResponseLoginHandler.class
-com\example\securingweb\CallLoginLink.class
-com\example\securingweb\SAXParserDemo.class
-com\example\securingweb\CustomAuthenticationProvider.class
-com\example\securingweb\MvcConfig.class
-com\example\securingweb\SecuringWebApplication.class
-com\example\securingweb\SpringBootWebInitializer.class
-com\example\securingweb\WebSecurityConfig.class
