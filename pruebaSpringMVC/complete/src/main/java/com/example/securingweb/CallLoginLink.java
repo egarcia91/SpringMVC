@@ -28,7 +28,7 @@ public class CallLoginLink {
 		try {
 			url = new URL("https://dws06ct0001.dcc.dbna.net/ws_login_1_1/ConsultarDatosUsuarioService");
 		} catch (MalformedURLException e) {
-			System.out.println("me fui por malformacion de URL");
+			System.err.println("me fui por malformacion de URL");
 			throw new RuntimeException("Error al crear URL", e);
 		}
 
@@ -37,7 +37,7 @@ public class CallLoginLink {
 		String basicAuth = "Basic d3NfbG9naW5fbGluazpQYXNzdzByZA==";
 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		System.out.println("por el momento pude hacer la conexion");
+		System.err.println("por el momento pude hacer la conexion");
 		conn.setDoOutput(true);
 		conn.setConnectTimeout(connectTimeout);
 		conn.setReadTimeout(requestTimeout);
@@ -53,7 +53,7 @@ public class CallLoginLink {
 //			User-Agent: Apache-HttpClient/4.5.5 (Java/12.0.1)
 
 
-		System.out.println("empiezo a pasar parametros por body");
+		System.err.println("empiezo a pasar parametros por body");
 //		conn.setRequestProperty("Alias", "wslogin3");
 //		conn.setRequestProperty("Clave", "Prueba05");
 //		conn.setRequestProperty("IpCliente", "");
@@ -64,9 +64,9 @@ public class CallLoginLink {
 		os.write(xmlValue.getBytes());
 		os.flush();
 
-		System.out.println("hago el llamado a servidor");
-		System.out.println(conn.getResponseCode());
-		System.out.println("aca ya no llega");
+		System.err.println("hago el llamado a servidor");
+		System.err.println(conn.getResponseCode());
+		System.err.println("aca ya no llega");
 
 		InputStream is = isResponseCodeOKForHTTPClient(conn.getResponseCode()) ? conn
 		.getInputStream() : conn.getErrorStream();
@@ -90,7 +90,7 @@ public class CallLoginLink {
 				builder.append(line);
 			}
 
-			System.out.println(builder.toString());
+			System.err.println(builder.toString());
 		}
 
 		return true;
